@@ -118,6 +118,8 @@ use WPGraphQL\Type\ObjectType\Taxonomy;
 use WPGraphQL\Type\ObjectType\Theme;
 use WPGraphQL\Type\ObjectType\User;
 use WPGraphQL\Type\ObjectType\UserRole;
+use WPGraphQL\Type\ObjectType\Settings;
+use WPGraphQL\Type\Scalar\Upload;
 use WPGraphQL\Type\Union\MenuItemObjectUnion;
 use WPGraphQL\Type\Union\PostObjectUnion;
 use WPGraphQL\Type\Union\TermObjectUnion;
@@ -357,6 +359,11 @@ class TypeRegistry {
 		MenuItemObjectUnion::register_type( $this );
 		PostObjectUnion::register_type( $this );
 		TermObjectUnion::register_type( $this );
+
+		/**
+		 * Register scalar.
+		 */
+		Upload::register_type();
 
 		/**
 		 * Register core connections
